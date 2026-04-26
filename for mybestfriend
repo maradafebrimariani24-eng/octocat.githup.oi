@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Terima Kasih Sahabat 💖</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+}
+
+/* SLIDE */
+.slide {
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    animation: fade 1s;
+}
+
+.active {
+    display: flex;
+}
+
+@keyframes fade {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* BACKGROUND LUCU */
+.slide1 { background: linear-gradient(135deg, #e89799, #512efc); }
+.slide2 { background: linear-gradient(135deg, #a18cd1, #fbc2eb); }
+.slide3 { background: linear-gradient(135deg, #f6d365, #2ca1d7); }
+.slide4 { background: linear-gradient(135deg, #84fab0, #8fd3f4); }
+
+/* TEXT */
+h1 { font-size: 34px; }
+p { font-size: 18px; max-width: 80%; }
+
+/* BUTTON */
+button {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 10px;
+    background: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* SLIDER FOTO */
+.slider {
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.slides {
+    display: flex;
+    width: 900%;
+    animation: geser 18s infinite;
+}
+
+.slides img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+
+/* ANIMASI FOTO */
+@keyframes geser {
+    0% {transform: translateX(0);}
+    11% {transform: translateX(-250px);}
+    22% {transform: translateX(-500px);}
+    33% {transform: translateX(-750px);}
+    44% {transform: translateX(-1000px);}
+    55% {transform: translateX(-1250px);}
+    66% {transform: translateX(-1500px);}
+    77% {transform: translateX(-1750px);}
+    88% {transform: translateX(-2000px);}
+    100% {transform: translateX(0);}
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 MUSIK (TIDAK LANGSUNG AUTOPLAY, TAPI AKAN NYALA SAAT KLIK) -->
+<audio id="musik" loop>
+    <source src="d:\Mapil\lagu.mp3" type="audio/mpeg">
+</audio>
+
+<!-- SLIDE 1 -->
+<div class="slide slide1 active">
+    <h1>💖 Terima Kasih MY BESTFRIEND 💖</h1>
+    <p>Kamu adalah salah satu orang paling berharga dalam hidupku 🤍</p>
+    <button onclick="nextSlide()">Next ➡</button>
+</div>
+
+<!-- SLIDE 2 -->
+<div class="slide slide2">
+    <h1>Hehe 😄</h1>
+    <p>Makasih sudah selalu ada di setiap cerita hidupku 🌸</p>
+    <button onclick="nextSlide()">Next ➡</button>
+</div>
+
+<!-- SLIDE 3 -->
+<div class="slide slide3">
+    <h1>Terima Kasih 🌷</h1>
+    <p>Sudah menjadi tempat berbagi cerita, tawa, dan semangat 💖</p>
+    <button onclick="nextSlide()">Next ➡</button>
+</div>
+
+<!-- SLIDE 4 FOTO -->
+<div class="slide slide4">
+    <h1>Kenangan Kita 📸</h>
+    <p>Semua momen ini sangat berarti 😄</p>
+
+    <div class="slider">
+        <div class="slides">
+            <img src="d:\Mapil\1.jpeg">
+            <img src="d:\Mapil\2.jpeg">
+            <img src="d:\Mapil\3.jpeg">
+            <img src="d:\Mapil\4.jpeg">
+            <img src="d:\Mapil\5.jpeg">
+            <img src="d:\Mapil\6.jpeg">
+            <img src="d:\Mapil\7.jpeg">
+            <img src="d:\Mapil\8.jpeg">
+            <img src="d:\Mapil\9.jpeg">
+        </div>
+    </div>
+
+    <button onclick="nextSlide()">Next ➡</button>
+</div>
+
+<!-- SLIDE 5 -->
+<div class="slide slide1">
+    <h1>Kamu Itu 🌟</h1>
+    <p>Sahabat yang selalu bikin hariku lebih baik dan bahagia. ☀️</p>
+    <button onclick="nextSlide()">Next ➡</button>
+</div>
+
+<!-- SLIDE 6 -->
+<div class="slide slide2">
+    <h1>Jujur 😆</h1>
+    <p>Tanpa kamu, hari-hari pasti terasa berbeda 🤍</p>
+    <button onclick="nextSlide()">Next ➡</button>
+</div>
+
+<!-- SLIDE 7 -->
+<div class="slide slide3">
+    <h1>Aku Bersyukur 🤲</h1>
+    <p>Punya sahabat seperti kamu, kamu adalah anugerah yang indah ✨</p>
+    <button onclick="nextSlide()">Next ➡</button>
+</div>
+
+<!-- SLIDE 8 -->
+<div class="slide slide4">
+    <h1>Semoga 🌈</h1>
+    <p>Persahabatan kita selalu terjaga dan penuh kebaikan 💖</p>
+    <button onclick="nextSlide()">Next ➡</button>
+</div>
+
+<!-- SLIDE 9 -->
+<div class="slide slide1">
+    <h1>💌 Penutup</h1>
+    <p>Terima kasih sudah menjadi sahabat terbaikku 🤍✨</p>
+    <button onclick="restart()">Ulang 🔄</button>
+</div>
+
+<script>
+let current = 0;
+const slides = document.querySelectorAll(".slide");
+
+/* SLIDE CONTROL */
+function nextSlide() {
+    slides[current].classList.remove("active");
+    current++;
+    if (current >= slides.length) current = 0;
+    slides[current].classList.add("active");
+}
+
+function restart() {
+    slides[current].classList.remove("active");
+    current = 0;
+    slides[current].classList.add("active");
+}
+
+/* 🎵 MUSIK NYALA SAAT KLIK PERTAMA */
+document.addEventListener("click", function () {
+    document.getElementById("musik").play();
+}, { once: true });
+
+</script>
+
+</body>
+</html>

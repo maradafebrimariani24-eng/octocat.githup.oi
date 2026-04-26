@@ -1,208 +1,88 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<title>Terima Kasih Sahabat 💖</title>
+  <meta charset="UTF-8">
+  <title>Terima Kasih Sahabat</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      color: white;
+      background: linear-gradient(to bottom, #cce7ff, #66b3ff, #0059b3);
+    }
 
-<style>
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    overflow: hidden;
-}
+    h1 {
+      margin-top: 30px;
+      font-size: 40px;
+    }
 
-/* SLIDE */
-.slide {
-    display: none;
-    height: 100vh;
-    width: 100vw;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    color: white;
-    animation: fade 1s;
-}
+    p {
+      max-width: 600px;
+      margin: auto;
+      font-size: 18px;
+      line-height: 1.6;
+    }
 
-.active {
-    display: flex;
-}
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 20px;
+    }
 
-@keyframes fade {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
 
-/* BACKGROUND LUCU */
-.slide1 { background: linear-gradient(135deg, #e89799, #512efc); }
-.slide2 { background: linear-gradient(135deg, #a18cd1, #fbc2eb); }
-.slide3 { background: linear-gradient(135deg, #f6d365, #2ca1d7); }
-.slide4 { background: linear-gradient(135deg, #84fab0, #8fd3f4); }
+    audio {
+      margin: 20px;
+    }
 
-/* TEXT */
-h1 { font-size: 34px; }
-p { font-size: 18px; max-width: 80%; }
-
-/* BUTTON */
-button {
-    position: absolute;
-    bottom: 30px;
-    right: 30px;
-    padding: 10px 18px;
-    border: none;
-    border-radius: 10px;
-    background: white;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-/* SLIDER FOTO */
-.slider {
-    width: 250px;
-    height: 250px;
-    overflow: hidden;
-    border-radius: 20px;
-    margin-top: 20px;
-}
-
-.slides {
-    display: flex;
-    width: 900%;
-    animation: geser 18s infinite;
-}
-
-.slides img {
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-}
-
-/* ANIMASI FOTO */
-@keyframes geser {
-    0% {transform: translateX(0);}
-    11% {transform: translateX(-250px);}
-    22% {transform: translateX(-500px);}
-    33% {transform: translateX(-750px);}
-    44% {transform: translateX(-1000px);}
-    55% {transform: translateX(-1250px);}
-    66% {transform: translateX(-1500px);}
-    77% {transform: translateX(-1750px);}
-    88% {transform: translateX(-2000px);}
-    100% {transform: translateX(0);}
-}
-</style>
+    .card {
+      background: rgba(0,0,0,0.3);
+      margin: 20px;
+      padding: 20px;
+      border-radius: 15px;
+    }
+  </style>
 </head>
-
 <body>
 
-<!-- 🎵 MUSIK (TIDAK LANGSUNG AUTOPLAY, TAPI AKAN NYALA SAAT KLIK) -->
-<audio id="musik" loop>
+  <h1>💙 Terima Kasih Sahabat 💙</h1>
+
+  <div class="card">
+    <p>
+      Hai sahabatku,<br><br>
+      Aku cuma mau bilang terima kasih…<br>
+      karena kamu selalu ada di saat suka maupun duka.<br><br>
+      Bersamamu, hari-hari terasa lebih ringan dan penuh warna.<br>
+      Semoga persahabatan ini terus berjalan, kuat, dan tak tergantikan.<br><br>
+      Tetap jadi diri kamu yang seru, baik, dan selalu bikin senyum ya 😊<br><br>
+      💙 Terima kasih sudah jadi bagian dari hidupku 💙 <br><br>
+      SCROL KE BAWAH
+    </p>
+  </div>
+
+  <!-- Musik -->
+  <audio controls autoplay loop>
     <source src="d:\Mapil\lagu.mp3" type="audio/mpeg">
-</audio>
+  </audio>
 
-<!-- SLIDE 1 -->
-<div class="slide slide1 active">
-    <h1>💖 Terima Kasih MY BESTFRIEND 💖</h1>
-    <p>Kamu adalah salah satu orang paling berharga dalam hidupku 🤍</p>
-    <button onclick="nextSlide()">Next ➡</button>
-</div>
-
-<!-- SLIDE 2 -->
-<div class="slide slide2">
-    <h1>Hehe 😄</h1>
-    <p>Makasih sudah selalu ada di setiap cerita hidupku 🌸</p>
-    <button onclick="nextSlide()">Next ➡</button>
-</div>
-
-<!-- SLIDE 3 -->
-<div class="slide slide3">
-    <h1>Terima Kasih 🌷</h1>
-    <p>Sudah menjadi tempat berbagi cerita, tawa, dan semangat 💖</p>
-    <button onclick="nextSlide()">Next ➡</button>
-</div>
-
-<!-- SLIDE 4 FOTO -->
-<div class="slide slide4">
-    <h1>Kenangan Kita 📸</h>
-    <p>Semua momen ini sangat berarti 😄</p>
-
-    <div class="slider">
-        <div class="slides">
-            <img src="d:\Mapil\1.jpeg">
-            <img src="d:\Mapil\2.jpeg">
-            <img src="d:\Mapil\3.jpeg">
-            <img src="d:\Mapil\4.jpeg">
-            <img src="d:\Mapil\5.jpeg">
-            <img src="d:\Mapil\6.jpeg">
-            <img src="d:\Mapil\7.jpeg">
-            <img src="d:\Mapil\8.jpeg">
-            <img src="d:\Mapil\9.jpeg">
-        </div>
-    </div>
-
-    <button onclick="nextSlide()">Next ➡</button>
-</div>
-
-<!-- SLIDE 5 -->
-<div class="slide slide1">
-    <h1>Kamu Itu 🌟</h1>
-    <p>Sahabat yang selalu bikin hariku lebih baik dan bahagia. ☀️</p>
-    <button onclick="nextSlide()">Next ➡</button>
-</div>
-
-<!-- SLIDE 6 -->
-<div class="slide slide2">
-    <h1>Jujur 😆</h1>
-    <p>Tanpa kamu, hari-hari pasti terasa berbeda 🤍</p>
-    <button onclick="nextSlide()">Next ➡</button>
-</div>
-
-<!-- SLIDE 7 -->
-<div class="slide slide3">
-    <h1>Aku Bersyukur 🤲</h1>
-    <p>Punya sahabat seperti kamu, kamu adalah anugerah yang indah ✨</p>
-    <button onclick="nextSlide()">Next ➡</button>
-</div>
-
-<!-- SLIDE 8 -->
-<div class="slide slide4">
-    <h1>Semoga 🌈</h1>
-    <p>Persahabatan kita selalu terjaga dan penuh kebaikan 💖</p>
-    <button onclick="nextSlide()">Next ➡</button>
-</div>
-
-<!-- SLIDE 9 -->
-<div class="slide slide1">
-    <h1>💌 Penutup</h1>
-    <p>Terima kasih sudah menjadi sahabat terbaikku 🤍✨</p>
-    <button onclick="restart()">Ulang 🔄</button>
-</div>
-
-<script>
-let current = 0;
-const slides = document.querySelectorAll(".slide");
-
-/* SLIDE CONTROL */
-function nextSlide() {
-    slides[current].classList.remove("active");
-    current++;
-    if (current >= slides.length) current = 0;
-    slides[current].classList.add("active");
-}
-
-function restart() {
-    slides[current].classList.remove("active");
-    current = 0;
-    slides[current].classList.add("active");
-}
-
-/* 🎵 MUSIK NYALA SAAT KLIK PERTAMA */
-document.addEventListener("click", function () {
-    document.getElementById("musik").play();
-}, { once: true });
-
-</script>
+  <!-- Galeri 9 Foto -->
+  <div class="gallery">
+    <img src="d:\Mapil\1.jpeg">
+    <img src="d:\Mapil\2.jpeg">
+    <img src="d:\Mapil\3.jpeg">
+    <img src="d:\Mapil\4.jpeg">
+    <img src="d:\Mapil\5.jpeg">
+    <img src="d:\Mapil\6.jpeg">
+    <img src="d:\Mapil\7.jpeg">
+    <img src="d:\Mapil\8.jpeg">
+    <img src="d:\Mapil\9.jpeg">
+  </div>
 
 </body>
 </html>
